@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar.jsx";
+import Sidebar from "./SideBar.jsx";
 import  useLocalStorage  from "../hooks/useLocalStorage";
 import "../styles/style.css";
 
