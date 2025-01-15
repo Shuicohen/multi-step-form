@@ -23,7 +23,7 @@ body {
   /* Sidebar Styles */
   .sidebar {
     width: 240px;
-    background: url("../assets/images/bg-sidebar-desktop.svg") no-repeat center center;
+    background: url("/assets/images/bg-sidebar-desktop.svg") no-repeat center center;
     background-size: cover;
     color: white;
     padding: 20px;
@@ -366,7 +366,7 @@ body {
     .sidebar {
       width: 100%;
       height: auto;
-      background: url("../assets/images/bg-sidebar-mobile.svg") no-repeat center center;
+      background: url("/assets/images/bg-sidebar-mobile.svg") no-repeat center center;
       background-size: cover;
       padding: 20px 10px;
       display: flex;
