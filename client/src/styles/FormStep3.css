@@ -1,0 +1,65 @@
+.addons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .addon-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .addon-card.selected {
+    border-color: #4834d4; /* Highlight active add-ons */
+    background-color: #f0f4ff; /* Optional for highlighting */
+  }
+  
+  .addon-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .addon-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .addon-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .addon-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4834d4;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  button {
+    background-color: #4834d4;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2c2480;
+  }
+  

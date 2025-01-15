@@ -1,0 +1,71 @@
+.sidebar {
+    width: 240px;
+    background: url("/assets/images/bg-sidebar-desktop.svg") no-repeat center center;
+    background-size: cover; /* Ensure the background scales properly */
+    color: white;
+    padding: 20px;
+    border-radius: 8px 0 0 8px; /* Rounded edges for the left side */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between elements */
+  }
+  
+  .sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #d1d5db; /* Lighter gray for inactive steps */
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar ul li.active {
+    font-weight: bold;
+    color: #4f46e5; /* Purple for the active step */
+    background-color: white;
+    border-radius: 6px;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    color: white; /* Keep text white on hover */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; /* Full width for smaller screens */
+      border-radius: 0; /* Remove rounded corners for mobile */
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px;
+      background: url("/assets/images/bg-sidebar-mobile.svg") no-repeat center center;
+      background-size: cover;
+    }
+  
+    .sidebar ul {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem; /* Add spacing for horizontal items */
+    }
+  
+    .sidebar ul li {
+      font-size: 0.9rem;
+      margin-bottom: 0; /* Remove margin for horizontal layout */
+      padding: 5px 10px; /* Adjust padding for mobile */
+    }
+  }
+  
