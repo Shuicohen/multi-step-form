@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: "http://localhost:5173", // Update this to your frontend's origin
+    origin: "https://multi-step-form-1-loes.onrender.com", // Update this to your frontend's origin
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
 }));
