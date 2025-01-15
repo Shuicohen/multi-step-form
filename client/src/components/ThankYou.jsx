@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./SideBar";
+import Sidebar from "./SideBar.jsx";
 import iconThankYou from "/assets/images/icon-thank-you.svg";
 import "../styles/style.css";
 
