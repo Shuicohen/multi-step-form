@@ -19,6 +19,7 @@ router.post("/form", async (req, res) => {
         plan,
         addons: JSON.stringify(addons),
         billing,
+        created_at: new Date(),
       })
       .returning("*");
 
