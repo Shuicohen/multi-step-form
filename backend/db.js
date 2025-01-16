@@ -1,32 +1,27 @@
-const { Pool } = require("pg");
+const knex = require("knex");
 require("dotenv").config(); // Load environment variables
 
-const pool = new Pool({
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.DB_PORT || 5432,
-  idleTimeoutMillis: 10000, // Close idle clients after 10 seconds
-  connectionTimeoutMillis: 5000, // 5 seconds to establish a connection
-  ssl: {
-    rejectUnauthorized: false, // Required for Neon
+const db = knex({
+  client: "pg",
+  connection: {
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.DB_PORT || 5432,
+    ssl: { rejectUnauthorized: false }, // Required for Neon
   },
-  keepAlive: true, // Keep the connection alive
+  pool: {
+    min: 2,
+    max: 10,
+  },
 });
 
-// Debug pool connections
-pool.on("connect", () => console.log("New client connected"));
-pool.on("remove", () => console.log("Client removed"));
-
-// Test the database connection
-(async () => {
-  try {
-    await pool.connect();
-    console.log("Database connected successfully!");
-  } catch (err) {
+db.raw("SELECT 1")
+  .then(() => console.log("Database connected successfully!"))
+  .catch((err) => {
     console.error("Database connection error:", err);
-  }
-})();
+    process.exit(1);
+  });
 
-module.exports = pool;
+module.exports = db;
