@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import useLocalStorage from "./hooks/useLocalStorage"; // Adjust path if needed
 import FormStep1 from "./components/FormStep1";
 import FormStep2 from "./components/FormStep2";
