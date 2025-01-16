@@ -5,10 +5,11 @@ require("dotenv").config();
 const db = require('./db');
 const formRoutes = require("./routes/formRoutes");
 const app = express();
+const path = require("path");
 
 // Middleware
 app.use(cors({
-    origin: "https://multi-step-form-1-loes.onrender.com", // Update this to your frontend's origin
+    origin: "http://localhost:5173", // Update this to your frontend's origin
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
 }));
@@ -28,6 +29,12 @@ app.use((req, res, next) => {
     res.status(500).json({ error: 'Server encountered an issue' });
   });
   
+// Serve React Frontend
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 // Start the server
 const port = process.env.PORT || 5000;
