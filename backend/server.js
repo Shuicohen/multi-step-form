@@ -9,7 +9,7 @@ const path = require("path");
 
 // Middleware
 app.use(cors({
-    origin: "http://localhost:5173", // Update this to your frontend's origin
+    origin: "https://multi-step-form-oho5.onrender.com", // Update this to your frontend's origin
     methods: "GET,POST",
     allowedHeaders: "Content-Type",
 }));
