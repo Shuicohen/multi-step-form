@@ -30,6 +30,7 @@ const App = () => {
         <Route path="/step3" element={<FormStep3 onNext={updateFormData} />} />
         <Route path="/summary" element={<Summary formData={formData} />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       </div>
     </Router>
